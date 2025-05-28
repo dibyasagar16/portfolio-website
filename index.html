@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dibya Sagar Samal - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header class="bg-gray-900 py-4 shadow-lg fixed w-full z-50">
+      <nav class="container mx-auto flex justify-between items-center px-4">
+        <a href="#home" class="text-2xl font-extrabold text-white text-gradient"
+          >Dibya Sagar Samal</a
+        >
+        <div class="hamburger-menu md:hidden" id="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="navbar-links hidden md:flex space-x-6" id="navbar-links">
+          <li>
+            <a
+              href="#home"
+              class="navbar-link text-lg font-medium text-gray-300"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              href="#about"
+              class="navbar-link text-lg font-medium text-gray-300"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#skills"
+              class="navbar-link text-lg font-medium text-gray-300"
+              >Skills</a
+            >
+          </li>
+          <li>
+            <a
+              href="#experience"
+              class="navbar-link text-lg font-medium text-gray-300"
+              >Experience</a
+            >
+          </li>
+          <li>
+            <a
+              href="#projects"
+              class="navbar-link text-lg font-medium text-gray-300"
+              >Projects</a
+            >
+          </li>
+          <li>
+            <a
+              href="#contact"
+              class="navbar-link text-lg font-medium text-gray-300"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div id="dot-cursor"></div>
+    <div id="circle-cursor"></div>
+
+    <div id="skill-modal-overlay" class="modal-overlay">
+      <div id="skill-modal-content" class="modal-content">
+        <button id="modal-close-button" class="modal-close-button">
+          &times;
+        </button>
+        <h3 id="modal-skill-title" class="modal-title"></h3>
+        <p id="modal-skill-description" class="modal-description"></p>
+      </div>
+    </div>
+
+    <main class="pt-16">
+      <section
+        id="home"
+        class="section-padding flex flex-col items-center justify-center min-h-screen text-center bg-gray-800"
+      >
+        <div class="max-w-4xl mx-auto fade-in">
+          <h1
+            class="text-5xl md:text-7xl font-extrabold leading-tight mb-4 text-gradient"
+          >
+            Hi, I'm Dibya Sagar Samal
+          </h1>
+          <p class="text-xl md:text-2xl text-gray-300 mb-8">
+            IT graduate with hands-on experience in Linux systems, DevOps tools,
+            and ELK stack monitoring.
+          </p>
+          <a
+            href="#projects"
+            class="btn-primary inline-block text-lg font-semibold"
+            >View My Work</a
+          >
+        </div>
+      </section>
+
+      <section id="about" class="section-padding bg-gray-900">
+        <div class="container mx-auto max-w-4xl text-center fade-in">
+          <h2 class="text-4xl font-bold mb-8 text-gradient">About Me</h2>
+          <p class="text-lg leading-relaxed mb-4">
+            IT graduate with hands-on experience in Linux systems, DevOps tools,
+            and ELK stack monitoring in a 24/7 support setup. Skilled in
+            managing incidents, service requests, and collaborating with other
+            teams.
+          </p>
+          <p class="text-lg leading-relaxed mb-4">
+            Proficient with Git, Jenkins, Docker, and learning AWS and cloud
+            technologies. Committed to continuous improvement, automation, and
+            delivering high-performance, reliable solutions. Along with the
+            understanding of frontend development.
+          </p>
+          <div class="flex justify-center space-x-6 mt-8">
+            <a
+              href="https://github.com/dibyasagar16"
+              target="_blank"
+              class="text-gray-400 hover:text-white transition-colors duration-300"
+            >
+              <svg
+                class="w-8 h-8"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.499.09.679-.217.679-.481 0-.237-.008-.865-.013-1.702-2.782.602-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.618.069-.606.069-.606 1.003.07 1.531 1.032 1.531 1.032.892 1.529 2.341 1.084 2.902.829.091-.645.351-1.085.636-1.334-2.22-.253-4.555-1.113-4.555-4.953 0-1.096.391-1.996 1.029-2.693-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.202 2.398.099 2.65.64.697 1.028 1.597 1.028 2.693 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.335-.012 2.41-.012 2.72 0 .267.179.579.688.481C21.137 20.208 24 16.452 24 12.017 24 6.484 19.522 2 12 2Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://linkedin.com/in/dibya-sagar-samal"
+              target="_blank"
+              class="text-gray-400 hover:text-white transition-colors duration-300"
+            >
+              <svg
+                class="w-8 h-8"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" class="section-padding bg-gray-800">
+        <div class="container mx-auto max-w-4xl text-center fade-in">
+          <h2 class="text-4xl font-bold mb-8 text-gradient">Skills</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="card">
+              <h3 class="text-2xl font-semibold mb-4 text-white">
+                Technical Skills
+              </h3>
+              <div class="flex flex-wrap justify-center gap-3">
+                <span
+                  class="skill-item"
+                  data-skill-name="Java"
+                  data-skill-description="Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible. It's widely used for enterprise-level applications, Android development, and big data."
+                  >Java</span
+                >
+                <span
+                  class="skill-item"
+                  data-skill-name="JavaScript"
+                  data-skill-description="JavaScript is a high-level, often just-in-time compiled language that conforms to the ECMAScript standard. It is a multi-paradigm language, supporting event-driven, functional, and imperative programming styles. It's essential for web interactivity."
+                  >JavaScript</span
+                >
+                <span
+                  class="skill-item"
+                  data-skill-name="C"
+                  data-skill-description="C is a powerful general-purpose programming language. It can be used to develop operating systems, databases, computer languages, and more. It offers low-level memory access and is known for its efficiency."
+                  >C</span
+                >
+                <span
+                  class="skill-item"
+                  data-skill-name="C++"
+                  data-skill-description="C++ is a general-purpose programming language created as an extension of the C language. It has imperative, object-oriented and generic programming features, while also providing facilities for low-level memory manipulation."
+                  >C++</span
+                >
+                <span
+                  class="skill-item"
+                  data-skill-name="Python"
+                  data-skill-description="Python is an interpreted, high-level, general-purpose programming language. Its design philosophy emphasizes code readability with its notable use of significant indentation. It's popular for web development, data science, AI, and automation."
+                  >Python</span
+                >
+                <span
+                  class="skill-item"
+                  data-skill-name="HTML"
+                  data-skill-description="HTML (HyperText Markup Language) is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript."
+                  >HTML</span
+                >
+                <span
+                  class="skill-item"
+                  data-skill-name="CSS"
+                  data-skill-description="CSS (Cascading Style Sheets) is a style sheet language used for describing the presentation of a document written in HTML or XML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript."
+                  >CSS</span
+                >
+                <span
+                  class="skill-item"
+                  data-skill-name="React.js"
+                  data-skill-description="React.js is a free and open-source front-end JavaScript library for building user interfaces based on components. It's maintained by Meta and a community of individual developers and companies."
+                  >React.js</span
+                >
+                <span
+                  class="skill-item"
+                  data-skill-name="Linux"
+                  data-skill-description="Linux is a family of open-source Unix-like operating systems based on the Linux kernel. It is widely used for servers, embedded systems, and desktop computing due to its stability, security, and flexibility."
+                  >Linux</span
+                >
+                <span
+                  class="skill-item"
+                  data-skill-name="Git"
+                  data-skill-description="Git is a distributed version control system that tracks changes in any set of computer files, usually used for coordinating work among programmers collaboratively developing source code during software development."
+                  >Git</span
+                >
+                <span
+                  class="skill-item"
+                  data-skill-name="Bash Scripting"
+                  data-skill-description="Bash scripting involves writing scripts (sequences of commands) for the Bash shell, a Unix shell and command language. It's used for automating repetitive tasks, system administration, and command-line operations."
+                  >Bash Scripting</span
+                >
+                <span
+                  class="skill-item"
+                  data-skill-name="Docker"
+                  data-skill-description="Docker is a set of platform as a service (PaaS) products that use OS-level virtualization to deliver software in packages called containers. Containers are isolated from one another and bundle their own software, libraries and configuration files."
+                  >Docker</span
+                >
+                <span
+                  class="skill-item"
+                  data-skill-name="Maven"
+                  data-skill-description="Apache Maven is a software project management and comprehension tool. Based on the concept of a Project Object Model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information."
+                  >Maven</span
+                >
+                <span
+                  class="skill-item"
+                  data-skill-name="Jenkins"
+                  data-skill-description="Jenkins is an open-source automation server. It helps to automate the non-human part of the software development process, with continuous integration and facilitating continuous delivery."
+                  >Jenkins</span
+                >
+                <span
+                  class="skill-item"
+                  data-skill-name="AWS"
+                  data-skill-description="Amazon Web Services (AWS) is a comprehensive, broadly adopted, and rapidly evolving cloud platform, offering over 200 fully featured services from data centers globally. It provides on-demand cloud computing platforms and APIs."
+                  >AWS</span
+                >
+                <span
+                  class="skill-item"
+                  data-skill-name="ELK Stack"
+                  data-skill-description="The ELK Stack is a collection of three open-source products – Elasticsearch, Logstash, and Kibana – from Elastic. It's used for centralized logging, allowing you to search, analyze, and visualize logs generated from various sources."
+                  >ELK Stack</span
+                >
+                <span
+                  class="skill-item"
+                  data-skill-name="Bootstrap"
+                  data-skill-description="Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. It contains HTML, CSS and JavaScript-based design templates for typography, forms, buttons, navigation and other interface components."
+                  >Bootstrap</span
+                >
+                <span
+                  class="skill-item"
+                  data-skill-name="Tailwind CSS"
+                  data-skill-description="Tailwind CSS is a utility-first CSS framework for rapidly building custom user interfaces. Instead of predefined components, it provides low-level utility classes that can be combined to create unique designs."
+                  >Tailwind CSS</span
+                >
+                <span
+                  class="skill-item"
+                  data-skill-name="Networking"
+                  data-skill-description="Networking skills involve understanding how computer networks operate, including protocols (TCP/IP), hardware (routers, switches), and concepts like IP addressing, DNS, and firewalls. Essential for system administration and cybersecurity."
+                  >Networking</span
+                >
+                <span
+                  class="skill-item"
+                  data-skill-name="Nginx"
+                  data-skill-description="Nginx (engine-x) is a web server that can also be used as a reverse proxy, load balancer, mail proxy and HTTP cache. It's known for its high performance, stability, rich feature set, simple configuration, and low resource consumption."
+                  >Nginx</span
+                >
+              </div>
+            </div>
+            <div class="card">
+              <h3 class="text-2xl font-semibold mb-4 text-white">
+                Soft Skills
+              </h3>
+              <div class="flex flex-wrap justify-center gap-3">
+                <span
+                  class="skill-item"
+                  data-skill-name="Communication"
+                  data-skill-description="Effective communication involves clearly conveying information, actively listening, and understanding different perspectives. It's crucial for teamwork, client interactions, and presenting ideas."
+                  >Communication</span
+                >
+                <span
+                  class="skill-item"
+                  data-skill-name="Critical Thinking"
+                  data-skill-description="Critical thinking is the objective analysis and evaluation of information in order to form a judgment. It involves problem-solving, decision-making, and identifying biases."
+                  >Critical Thinking</span
+                >
+                <span
+                  class="skill-item"
+                  data-skill-name="Teamwork"
+                  data-skill-description="Teamwork involves collaborating effectively with others towards a common goal. It requires cooperation, mutual support, and respecting diverse skills and opinions."
+                  >Teamwork</span
+                >
+                <span
+                  class="skill-item"
+                  data-skill-name="Problem Solving"
+                  data-skill-description="Problem-solving is the process of identifying a problem, developing potential solutions, and implementing the most effective one. It often involves analytical thinking, creativity, and adaptability."
+                  >Problem Solving</span
+                >
+                <span
+                  class="skill-item"
+                  data-skill-name="Adaptability"
+                  data-skill-description="Adaptability is the ability to adjust to new conditions, environments, or challenges. In a rapidly changing tech landscape, it's vital for learning new technologies and workflows."
+                  >Adaptability</span
+                >
+                <span
+                  class="skill-item"
+                  data-skill-name="Time Management"
+                  data-skill-description="Time management is the process of planning and exercising conscious control over the amount of time spent on specific activities, especially to increase effectiveness, efficiency, or productivity."
+                  >Time Management</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="section-padding bg-gray-900">
+        <div class="container mx-auto max-w-4xl text-center fade-in">
+          <h2 class="text-4xl font-bold mb-8 text-gradient">
+            Professional Experience
+          </h2>
+          <div class="card text-left">
+            <h3 class="text-2xl font-semibold text-white">DevOps Engineer</h3>
+            <p class="text-gray-400">VOIS, India | August 2023 - Present</p>
+            <ul class="list-disc list-inside mt-4 space-y-2 text-gray-300">
+              <li>
+                Monitored and analyzed logs using Kibana and Elasticsearch,
+                identifying and escalating anomalies proactively, which reduced
+                response time by 20-30% in a 24/7 production support
+                environment.
+              </li>
+              <li>
+                Handled 100+ incident and service request tickets weekly,
+                ensuring accurate categorization, escalation to L2/L3 teams, and
+                proper resolution tracking using standard ITIL processes.
+              </li>
+              <li>
+                Collaborated on DevOps tasks, utilizing Git for version control
+                and contributing to automation efforts involving tools like
+                Jenkins, Docker, and Linux scripting.
+              </li>
+              <li>
+                Currently expanding skills in AWS cloud services, building
+                foundational knowledge in EC2, S3, IAM, and cloud monitoring
+                tools.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="section-padding bg-gray-800">
+        <div class="container mx-auto max-w-4xl text-center fade-in">
+          <h2 class="text-4xl font-bold mb-8 text-gradient">Projects</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="project-card text-left">
+              <h3 class="text-xl font-semibold mb-2 text-white">
+                CI/CD Pipeline for a React App
+              </h3>
+              <p class="text-gray-400 mb-4">
+                Designed and implemented a CI/CD pipeline to automate the build,
+                test, and deployment process of a React application. Integrated
+                GitHub as the source code repository, Jenkins for orchestrating
+                the pipeline, and Docker to containerize the application.
+              </p>
+              <a href="#" class="text-gray-400 hover:text-gray-300 font-medium"
+                >Learn More &rarr;</a
+              >
+            </div>
+            <div class="project-card text-left">
+              <h3 class="text-xl font-semibold mb-2 text-white">
+                Gemini Clone
+              </h3>
+              <p class="text-gray-400 mb-4">
+                Developed a Google Gemini-inspired conversational UI using
+                React.js with Vite for fast development and bundling.
+                Implemented responsive design with Tailwind CSS and used .env
+                files to securely manage API keys. Maintained clean version
+                control with .gitignore and Git.
+              </p>
+              <a
+                href="https://github.com/dibyasagar16/gemini-clone"
+                target="_blank"
+                class="text-gray-400 hover:text-gray-300 font-medium"
+                >Learn More &rarr;</a
+              >
+            </div>
+            <div class="project-card text-left">
+              <h3 class="text-xl font-semibold mb-2 text-white">
+                YouTube Clone
+              </h3>
+              <p class="text-gray-400 mb-4">
+                Built a static YouTube homepage clone using React.js, styled
+                with Tailwind CSS, and structured as reusable components.
+                Configured the project using Vite, followed best practices for
+                code organization, and excluded unnecessary files via
+                .gitignore.
+              </p>
+              <a
+                href="https://github.com/dibyasagar16/youtube-clone"
+                target="_blank"
+                class="text-gray-400 hover:text-gray-300 font-medium"
+                >Learn More &rarr;</a
+              >
+            </div>
+            <div class="project-card text-left">
+              <h3 class="text-xl font-semibold mb-2 text-white">
+                Mini JavaScript Projects
+              </h3>
+              <p class="text-gray-400 mb-4">
+                Created small yet functional apps including a To-Do Manager,
+                Weather App (API-based), and a Tic Tac Toe Game, using HTML,
+                CSS, and Vanilla JavaScript. These projects demonstrate DOM
+                manipulation, basic game logic, and integration with third-party
+                APIs.
+              </p>
+              <a
+                href="https://github.com/dibyasagar16"
+                target="_blank"
+                class="text-gray-400 hover:text-gray-300 font-medium"
+                >Learn More &rarr;</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section-padding bg-gray-900">
+        <div class="container mx-auto max-w-2xl text-center fade-in">
+          <h2 class="text-4xl font-bold mb-8 text-gradient">Get in Touch</h2>
+          <p class="text-lg leading-relaxed mb-8 text-gray-300">
+            Feel free to reach out using the form below, or connect through my
+            contact details.
+          </p>
+
+          <form
+            id="contact-form"
+            class="bg-gray-800 p-8 rounded-lg shadow-xl mb-8"
+            action="https://formspree.io/f/mrbqnkne "
+            method="POST"
+          >
+            <!-- Config.php can also be used in the action to get the inputs from for, directly to DB. -->
+
+            <div class="mb-4 text-left">
+              <label
+                for="name"
+                class="block text-gray-300 text-sm font-bold mb-2"
+                >Name</label
+              >
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="form-input"
+                placeholder="Your Name"
+                required
+              />
+            </div>
+            <div class="mb-4 text-left">
+              <label
+                for="email"
+                class="block text-gray-300 text-sm font-bold mb-2"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="form-input"
+                placeholder="your.email@example.com"
+                required
+              />
+            </div>
+            <div class="mb-6 text-left">
+              <label
+                for="message"
+                class="block text-gray-300 text-sm font-bold mb-2"
+                >Message</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                class="form-input form-textarea"
+                placeholder="Your message..."
+                required
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              name="submit-button"
+              class="btn-primary w-full md:w-auto font-bold text-lg"
+            >
+              Send Message
+            </button>
+            <div
+              id="form-message"
+              class="mt-4 text-green-400 font-semibold hidden"
+            >
+              Your message has been sent successfully!
+            </div>
+
+            <!-- Redirect after submit -->
+            <input type="hidden" name="_next" value="" />
+          </form>
+
+          <div class="flex flex-col items-center space-y-4 text-lg">
+            <p class="flex items-center text-gray-300">
+              <i class="fa-solid fa-envelope mr-2"></i>
+              <a href="mailto:dibyasagar16@gmail.com" class="hover:text-white"
+                >dibyasagar16@gmail.com</a
+              >
+            </p>
+            <p class="flex items-center text-gray-300">
+              <i class="fa-solid fa-phone mr-2"></i>
+              +91 7205157390
+            </p>
+            <p class="flex items-center text-gray-300">
+              <i class="fa-brands fa-github mr-2"></i>
+              <a
+                href="https://github.com/dibyasagar16"
+                target="_blank"
+                class="hover:text-white"
+                >GitHub Profile</a
+              >
+            </p>
+            <p class="flex items-center text-gray-300">
+              <i class="fa-brands fa-linkedin mr-2"></i>
+              <a
+                href="https://www.linkedin.com/in/dibya-sagar-samal/"
+                target="_blank"
+                class="hover:text-white"
+                >LinkedIn Profile</a
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 py-6">
+      <div class="container mx-auto text-center">
+        <p>&copy; 2025 Dibya Sagar Samal. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

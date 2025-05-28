@@ -1,0 +1,270 @@
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #0a1828; /* Dark classic blue */
+  color: #e2e8f0; /* Light text */
+  overflow-x: hidden; /* Prevent horizontal scrollbar from glow */
+  cursor: none; /* Hide the default cursor */
+}
+.section-padding {
+  padding: 4rem 1rem;
+}
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 6rem 2rem;
+  }
+}
+.navbar-link:hover {
+  color: #178582; /* Turquoise accent on hover */
+}
+.btn-primary {
+  background-color: #178582; /* Turquoise accent color */
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+.btn-primary:hover {
+  background-color: #126b69; /* Darker turquoise on hover */
+}
+.card,
+.project-card,
+form {
+  /* Glassmorphism effect - adjusted for new dark background */
+  background-color: rgba(
+    23,
+    133,
+    130,
+    0.1
+  ); /* Semi-transparent turquoise for cards */
+  border-radius: 0.75rem;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* Stronger shadow for depth */
+  backdrop-filter: blur(15px); /* Slightly more blur */
+  -webkit-backdrop-filter: blur(15px); /* Safari support */
+  border: 1px solid rgba(191, 161, 129, 0.2); /* Subtle gold border */
+}
+.skill-item {
+  background-color: rgba(
+    191,
+    161,
+    129,
+    0.2
+  ); /* Semi-transparent gold for skill items */
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  color: #e2e8f0;
+  cursor: pointer; /* Indicate it's clickable */
+}
+.skill-item:hover {
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow on hover */
+}
+.project-card {
+  transition: transform 0.3s ease;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+}
+.text-gradient {
+  background: linear-gradient(
+    to right,
+    #178582,
+    #bfa181
+  ); /* Turquoise to Gold gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hamburger-menu {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+}
+.hamburger-menu span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #e2e8f0;
+  border-radius: 2px;
+}
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: flex;
+  }
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(
+      10,
+      24,
+      40,
+      0.8
+    ); /* Transparent background for mobile menu, matches body */
+    backdrop-filter: blur(10px); /* More blur for mobile menu */
+    -webkit-backdrop-filter: blur(10px);
+    position: absolute;
+    top: 64px; /* Height of navbar */
+    left: 0;
+    padding: 1rem 0;
+    border-radius: 0.75rem;
+    border-top: 1px solid rgba(191, 161, 129, 0.2); /* Subtle gold border */
+  }
+  .navbar-links.active {
+    display: flex;
+  }
+  .navbar-link {
+    padding: 0.75rem 1rem;
+    text-align: center;
+  }
+}
+.form-input {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(191, 161, 129, 0.3); /* Gold border for contrast */
+  background-color: rgba(
+    23,
+    133,
+    130,
+    0.05
+  ); /* Very subtle turquoise background */
+  color: #e2e8f0;
+  margin-bottom: 1rem;
+}
+.form-input:focus {
+  outline: none;
+  border-color: #178582; /* Turquoise focus border */
+  box-shadow: 0 0 0 2px rgba(23, 133, 130, 0.5); /* Turquoise shadow */
+}
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+/* Header glassmorphism - adjusted for new dark mode */
+header {
+  background-color: rgba(10, 24, 40, 0.7); /* More transparent, matches body */
+  backdrop-filter: blur(15px); /* Slightly more blur */
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Stronger shadow for depth */
+}
+/* All sections will now use the same background color */
+#home,
+#about,
+#skills,
+#experience,
+#projects,
+#contact {
+  background-color: #0a1828; /* Consistent dark classic blue */
+  /* Add a subtle top border for separation */
+  border-top: 1px solid rgba(191, 161, 129, 0.1); /* Very subtle gold border */
+}
+/* Remove top border from the first section (home) */
+#home {
+  border-top: none;
+}
+
+/* Scroll animation styles */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom cursor styles */
+#dot-cursor {
+  position: fixed;
+  width: 8px; /* Small dot size */
+  height: 8px;
+  background-color: #bfa181; /* Gold color for the dot */
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%); /* Center the dot */
+  z-index: 1002; /* Ensure it's on top */
+}
+
+#circle-cursor {
+  position: fixed;
+  width: 30px; /* Larger circle size */
+  height: 30px;
+  border: 1px solid #178582; /* Turquoise border */
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%); /* Center the circle */
+  z-index: 1001; /* Behind the dot, but above content */
+  transition: transform 0.1s ease-out; /* Smooth following animation */
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* High z-index to be on top */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.modal-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+.modal-content {
+  background-color: rgba(23, 133, 130, 0.2); /* Glassmorphism for modal */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(191, 161, 129, 0.3);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.modal-overlay.show .modal-content {
+  transform: translateY(0);
+  opacity: 1;
+}
+.modal-close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #bfa181; /* Gold color for close button */
+  cursor: pointer;
+  padding: 0.5rem;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+.modal-close-button:hover {
+  color: #ffffff;
+}
+.modal-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #178582; /* Turquoise for modal title */
+}
+.modal-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+}
