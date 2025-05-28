@@ -20,6 +20,19 @@
   </head>
 
   <body>
+    <div id="dot-cursor"></div>
+    <div id="circle-cursor"></div>
+
+    <div id="skill-modal-overlay" class="modal-overlay">
+      <div id="skill-modal-content" class="modal-content">
+        <button id="modal-close-button" class="modal-close-button">
+          &times;
+        </button>
+        <h3 id="modal-skill-title" class="modal-title"></h3>
+        <p id="modal-skill-description" class="modal-description"></p>
+      </div>
+    </div>
+
     <header class="bg-gray-900 py-4 shadow-lg fixed w-full z-50">
       <nav class="container mx-auto flex justify-between items-center px-4">
         <a href="#home" class="text-2xl font-extrabold text-white text-gradient"
@@ -76,18 +89,6 @@
         </ul>
       </nav>
     </header>
-    <div id="dot-cursor"></div>
-    <div id="circle-cursor"></div>
-
-    <div id="skill-modal-overlay" class="modal-overlay">
-      <div id="skill-modal-content" class="modal-content">
-        <button id="modal-close-button" class="modal-close-button">
-          &times;
-        </button>
-        <h3 id="modal-skill-title" class="modal-title"></h3>
-        <p id="modal-skill-description" class="modal-description"></p>
-      </div>
-    </div>
 
     <main class="pt-16">
       <section
@@ -129,7 +130,7 @@
           </p>
           <div class="flex justify-center space-x-6 mt-8">
             <a
-              href="https://github.com/dibyasagar16"
+              href="https://github.com/yourgithub"
               target="_blank"
               class="text-gray-400 hover:text-white transition-colors duration-300"
             >
@@ -147,7 +148,7 @@
               </svg>
             </a>
             <a
-              href="https://linkedin.com/in/dibya-sagar-samal"
+              href="https://linkedin.com/in/yourlinkedin"
               target="_blank"
               class="text-gray-400 hover:text-white transition-colors duration-300"
             >
@@ -409,10 +410,7 @@
                 files to securely manage API keys. Maintained clean version
                 control with .gitignore and Git.
               </p>
-              <a
-                href="https://github.com/dibyasagar16/gemini-clone"
-                target="_blank"
-                class="text-gray-400 hover:text-gray-300 font-medium"
+              <a href="#" class="text-gray-400 hover:text-gray-300 font-medium"
                 >Learn More &rarr;</a
               >
             </div>
@@ -427,10 +425,7 @@
                 code organization, and excluded unnecessary files via
                 .gitignore.
               </p>
-              <a
-                href="https://github.com/dibyasagar16/youtube-clone"
-                target="_blank"
-                class="text-gray-400 hover:text-gray-300 font-medium"
+              <a href="#" class="text-gray-400 hover:text-gray-300 font-medium"
                 >Learn More &rarr;</a
               >
             </div>
@@ -445,10 +440,7 @@
                 manipulation, basic game logic, and integration with third-party
                 APIs.
               </p>
-              <a
-                href="https://github.com/dibyasagar16"
-                target="_blank"
-                class="text-gray-400 hover:text-gray-300 font-medium"
+              <a href="#" class="text-gray-400 hover:text-gray-300 font-medium"
                 >Learn More &rarr;</a
               >
             </div>
@@ -466,12 +458,10 @@
 
           <form
             id="contact-form"
-            class="bg-gray-800 p-8 rounded-lg shadow-xl mb-8"
-            action="https://formspree.io/f/mrbqnkne"
+            action="https://formspree.io/f/mrbqnkne?_next=no_redirect"
             method="POST"
+            class="bg-gray-800 p-8 rounded-lg shadow-xl mb-8"
           >
-            <!-- Config.php can also be used in the action to get the inputs from for, directly to DB. -->
-
             <div class="mb-4 text-left">
               <label
                 for="name"
@@ -518,7 +508,6 @@
             </div>
             <button
               type="submit"
-              name="submit-button"
               class="btn-primary w-full md:w-auto font-bold text-lg"
             >
               Send Message
@@ -529,35 +518,66 @@
             >
               Your message has been sent successfully!
             </div>
-
-            <!-- Redirect after submit -->
-            <input type="hidden" name="_next" value="" />
           </form>
 
           <div class="flex flex-col items-center space-y-4 text-lg">
             <p class="flex items-center text-gray-300">
-              <i class="fa-solid fa-envelope mr-2"></i>
+              <svg
+                class="w-6 h-6 mr-2 text-BFA181"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M3 8.75L12 14.25L21 8.75V6.5L12 12L3 6.5V8.75ZM12 0L0 6V18L12 24L24 18V6L12 0ZM21 17.25L12 11.75L3 17.25V19.5L12 14L21 19.5V17.25Z"
+                />
+              </svg>
               <a href="mailto:dibyasagar16@gmail.com" class="hover:text-white"
                 >dibyasagar16@gmail.com</a
               >
             </p>
             <p class="flex items-center text-gray-300">
-              <i class="fa-solid fa-phone mr-2"></i>
+              <svg
+                class="w-6 h-6 mr-2 text-BFA181"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M17 18.5c-2.485 0-4.5-2.015-4.5-4.5s2.015-4.5 4.5-4.5 4.5 2.015 4.5 4.5-2.015 4.5-4.5 4.5zm0-7c-1.379 0-2.5 1.121-2.5 2.5s1.121 2.5 2.5 2.5 2.5-1.121 2.5-2.5-1.121-2.5-2.5-2.5zM12 2c-5.523 0-10 4.477-10 10s4.477 10 10 10c1.523 0 2.973-.343 4.301-.968l3.699 3.699 1.414-1.414-3.699-3.699c.625-1.328.968-2.778.968-4.301 0-5.523-4.477-10-10-10zm0 2c4.411 0 8 3.589 8 8s-3.589 8-8 8-8-3.589-8-8 3.589-8 8-8z"
+                />
+              </svg>
               +91 7205157390
             </p>
             <p class="flex items-center text-gray-300">
-              <i class="fa-brands fa-github mr-2"></i>
+              <svg
+                class="w-6 h-6 mr-2 text-BFA181"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.499.09.679-.217.679-.481 0-.237-.008-.865-.013-1.702-2.782.602-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.618.069-.606.069-.606 1.003.07 1.531 1.032 1.531 1.032.892 1.529 2.341 1.084 2.902.829.091-.645.351-1.085.636-1.334-2.22-.253-4.555-1.113-4.555-4.953 0-1.096.391-1.996 1.029-2.693-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.026 2.747-1.026.546 1.379.202 2.398.099 2.65.64.697 1.028 1.597 1.028 2.693 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.335-.012 2.41-.012 2.72 0 .267.179.579.688.481C21.137 20.208 24 16.452 24 12.017 24 6.484 19.522 2 12 2Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
               <a
-                href="https://github.com/dibyasagar16"
+                href="https://github.com/yourgithub"
                 target="_blank"
                 class="hover:text-white"
                 >GitHub Profile</a
               >
             </p>
             <p class="flex items-center text-gray-300">
-              <i class="fa-brands fa-linkedin mr-2"></i>
+              <svg
+                class="w-6 h-6 mr-2 text-BFA181"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                />
+              </svg>
               <a
-                href="https://www.linkedin.com/in/dibya-sagar-samal/"
+                href="https://linkedin.com/in/yourlinkedin"
                 target="_blank"
                 class="hover:text-white"
                 >LinkedIn Profile</a
@@ -568,10 +588,8 @@
       </section>
     </main>
 
-    <footer class="bg-gray-900 text-gray-400 py-6">
-      <div class="container mx-auto text-center">
-        <p>&copy; 2025 Dibya Sagar Samal. All rights reserved.</p>
-      </div>
+    <footer class="bg-gray-900 py-8 text-center text-gray-500 text-sm">
+      <p>&copy; 2024 Dibya Sagar Samal. All rights reserved.</p>
     </footer>
 
     <script src="script.js"></script>

@@ -48,21 +48,19 @@ const contactForm = document.getElementById("contact-form");
 const formMessage = document.getElementById("form-message");
 
 contactForm.addEventListener("submit", async function (e) {
-  e.preventDefault(); /*  Prevent default form submission. */
+  e.preventDefault(); /* Prevent default form submission */
 
   const formData = new FormData(contactForm);
   const object = {};
-
   formData.forEach((value, key) => {
     object[key] = value;
   });
-
   const json = JSON.stringify(object);
 
   try {
     const response = await fetch(contactForm.action, {
       method: "POST",
-      header: {
+      headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
@@ -70,29 +68,54 @@ contactForm.addEventListener("submit", async function (e) {
     });
 
     if (response.ok) {
-      formMessage.textContent = "Your message has been sent successfully!";
+      // If response.ok is true, the submission was successful.
+      // Formspree sends a 200 OK with a JSON body for successful AJAX submissions.
+      // We will try to parse it, but if it's empty or not JSON, we still consider it a success.
+      let data = {};
+      const contentType = response.headers.get("content-type");
+      if (contentType && contentType.includes("application/json")) {
+        data = await response.json();
+      }
+
+      if (data.errors) {
+        // This case should ideally not happen if response.ok is true,
+        // but it's a safeguard if Formspree sends 200 OK with errors in body
+        formMessage.textContent =
+          "Error: " + data.errors.map((err) => err.message).join(", ");
+      } else {
+        formMessage.textContent = "Your message has been sent successfully!";
+      }
       formMessage.classList.remove("hidden");
-      contactForm.reset(); /* Clear form feilds. */
+      contactForm.reset(); /* Clear form fields */
     } else {
-      /* Handle errors from Formspree */
-      const data = await response.json();
+      // If response.ok is false, it's an error status code from Formspree (e.g., 4xx, 5xx)
+      let data = {};
+      const contentType = response.headers.get("content-type");
+      if (contentType && contentType.includes("application/json")) {
+        data = await response.json();
+      }
+
       if (data.errors) {
         formMessage.textContent =
-          "Error: " + data.errors.map((err) => err.message).json(", ");
+          "Error: " + data.errors.map((err) => err.message).join(", ");
       } else {
         formMessage.textContent =
-          "Error: Something went wrong. Please try again.";
+          "Error: Form submission failed with status " +
+          response.status +
+          ". Please try again.";
       }
       formMessage.classList.remove("hidden");
     }
   } catch (error) {
-    formMessage.textContent =
-      "Error: Could not connect to the server. Please check your internet connection.";
-    formMessage.classList.remove("hidden");
+    // This catch block handles network errors or issues with response parsing
+    // (e.g., if response.json() fails on a non-JSON body, or if fetch itself fails)
     console.error("Form submission error:", error);
+    formMessage.textContent =
+      "Error: Could not connect to the server or an unexpected issue occurred. Please try again.";
+    formMessage.classList.remove("hidden");
   }
 
-  /* Hide message after a few seconds. */
+  /* Hide message after a few seconds */
   setTimeout(() => {
     formMessage.classList.add("hidden");
   }, 5000);
