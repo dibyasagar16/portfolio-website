@@ -47,33 +47,55 @@ fadeInElements.forEach((element) => {
 const contactForm = document.getElementById("contact-form");
 const formMessage = document.getElementById("form-message");
 
-function chhoda() {
-  alert("Chhoda Called");
+contactForm.addEventListener("submit", async function (e) {
+  e.preventDefault(); /*  Prevent default form submission. */
 
+  const formData = new FormData(contactForm);
+  const object = {};
+
+  formData.forEach((value, key) => {
+    object[key] = value;
+  });
+
+  const json = JSON.stringify(object);
+
+  try {
+    const response = await fetch(contactForm.action, {
+      method: "POST",
+      header: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: json,
+    });
+
+    if (response.ok) {
+      formMessage.textContent = "Your message has been sent successfully!";
+      formMessage.classList.remove("hidden");
+      contactForm.reset(); /* Clear form feilds. */
+    } else {
+      /* Handle errors from Formspree */
+      const data = await response.json();
+      if (data.errors) {
+        formMessage.textContent =
+          "Error: " + data.errors.map((err) => err.message).json(", ");
+      } else {
+        formMessage.textContent =
+          "Error: Something went wrong. Please try again.";
+      }
+      formMessage.classList.remove("hidden");
+    }
+  } catch (error) {
+    formMessage.textContent =
+      "Error: Could not connect to the server. Please check your internet connection.";
+    formMessage.classList.remove("hidden");
+    console.error("Form submission error:", error);
+  }
+
+  /* Hide message after a few seconds. */
   setTimeout(() => {
-    formMessage.classList.remove("hidden"); /* Show success message */
-    contactForm.reset(); /* Clear form fields */
-
-    // Hide message after a few seconds
-    setTimeout(() => {
-      formMessage.classList.add("hidden");
-    }, 5000);
-  }, 1000);
-}
-
-contactForm.addEventListener("submit", function (e) {
-  e.preventDefault(); /* Prevent actual form submission */
-
-  // Simulate form submission success
-  setTimeout(() => {
-    formMessage.classList.remove("hidden"); /* Show success message */
-    contactForm.reset(); /* Clear form fields */
-
-    // Hide message after a few seconds
-    setTimeout(() => {
-      formMessage.classList.add("hidden");
-    }, 5000);
-  }, 1000); /* Simulate a 1-second delay for submission */
+    formMessage.classList.add("hidden");
+  }, 5000);
 });
 
 // Custom cursor logic
