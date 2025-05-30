@@ -185,3 +185,11 @@ skillModalOverlay.addEventListener("click", (e) => {
     skillModalOverlay.classList.remove("show");
   }
 });
+
+//Functionality for dark and light mode.
+
+btn = document.getElementById("light-dark-button");
+
+btn.addEventListener("click", () => {
+  btn.classList.toggle("demo-class");
+});
